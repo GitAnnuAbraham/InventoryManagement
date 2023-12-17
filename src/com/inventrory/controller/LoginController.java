@@ -30,6 +30,7 @@ public class LoginController extends HttpServlet {
 		String formPassword = req.getParameter("password");
 		if ("admin".equals(formUsername) && "admin".equals(formPassword)) {
 			HttpSession session = req.getSession(true);
+			session.setAttribute("user", formUsername);
 			resp.sendRedirect("home.jsp");
 		} else {
 			req.setAttribute("error", "invalid");

@@ -31,7 +31,8 @@ public class ProductManagement extends HttpServlet {
 		DBConnectoer connector = new DBConnectoer();
 		Connection con = connector.connect();
 		try {
-			PreparedStatement pst = con.prepareStatement("select ProductName, Description, Category, Price, StockQuantity from product");
+			PreparedStatement pst = con
+					.prepareStatement("select ProductName, Description, Category, Price, StockQuantity from product");
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
 				Product product = new Product();
@@ -65,25 +66,16 @@ public class ProductManagement extends HttpServlet {
 			// Get other product details similarly
 			// Create a Product object and add it to the list
 
-			Product product = new Product();
-			product.setProductName(productName);
-			product.setCategory(category);
-			product.setPrice(price);
-			product.setStockQuantity(stockQuantity);
-
 			DBConnectoer connector = new DBConnectoer();
 			Connection con = connector.connect();
-
 			try {
 				PreparedStatement pst = con.prepareStatement(
 						"insert into product(ProductName, Description, Category, Price, StockQuantity) values(?, ?, ?, ?, ?)");
-
-				pst.setString(1, product.getProductName());
-				pst.setString(2, product.getDescription());
-				pst.setString(3, product.getCategory());
-				pst.setDouble(4, product.getPrice());
-				pst.setInt(5, product.getStockQuantity());
-
+				pst.setString(1, productName);
+				pst.setString(2, description);
+				pst.setString(3, category);
+				pst.setDouble(4, price);
+				pst.setInt(5, stockQuantity);
 				pst.executeUpdate();
 
 			} catch (SQLException e) {

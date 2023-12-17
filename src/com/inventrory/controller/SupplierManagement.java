@@ -79,6 +79,7 @@ public class SupplierManagement extends HttpServlet {
 
 		connector.closeConnection();
 		}
+		resp.sendRedirect("supplier");
 
 	}
 }

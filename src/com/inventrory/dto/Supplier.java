@@ -1,28 +1,28 @@
 package com.inventrory.dto;
 
 public class Supplier {
-	Integer SupplierId;
-	String SupplierName;
-	String Place;
+	Integer supplierId;
+	String supplierName;
+	String place;
 	public Supplier() {
 	
 	}
 	public Integer getSupplierId() {
-		return SupplierId;
+		return supplierId;
 	}
 	public void setSupplierId(Integer supplierId) {
-		SupplierId = supplierId;
+		this.supplierId = supplierId;
 	}
 	public String getSupplierName() {
-		return SupplierName;
+		return supplierName;
 	}
 	public void setSupplierName(String supplierName) {
-		SupplierName = supplierName;
+		this.supplierName = supplierName;
 	}
 	public String getPlace() {
-		return Place;
+		return place;
 	}
 	public void setPlace(String place) {
-		Place = place;
+		this.place = place;
 	}
 }
